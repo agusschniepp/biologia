@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologia</title>
+    <!--Style-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
+</head>
+<body>
+	<!--Pantalla de inicio-->
+    <section class="inicio" id="screen-start">
+	<!--Background-->
+    <div class="back" id="back">
+
+    </div>
+	<!--Formulario Nombre-->
+    <div class="register">
+        <p>Ingrese su nombre:</p>
+        <input type="text" name="player" id="jugador" placeholder="Nombre">
+    </div>
+    <p class="boton inicial" id="start">Iniciar</p>
+    </section>
+    <section class="main" id="screen-exam">
+        <!--Barra-->
+        <nav class="bar">
+        <a  href="#">
+            <img src="logo.png" alt="Logo" width="50" height="45">
+            Examen final de Biologia
+        </a>
+        <!--Barra de progreso-->
+        <div class="progress">
+        <progress id="progress" value="0" max="100"></progress>
+        <span id="contador">/60</span>
+        </div>    
+        </nav>
+        <!--Tarjeta-->
+        <div class="card">
+            <p id="pregunta">
+            </p>
+            <div class="preguntas"><input class="enunciado" type="radio" name="respuestas" id="respuesta-1"><label for="respuesta-1">a. <span id="pregunta-1">
+            </span></label></div>
+            <div class="preguntas"><input class="enunciado" type="radio" name="respuestas" id="respuesta-2"><label for="respuesta-2">b. <span id="pregunta-2">
+            </span></label></div>
+            <div class="preguntas"><input class="enunciado" type="radio" name="respuestas" id="respuesta-3"><label for="respuesta-3">c. <span id="pregunta-3"></span></label></div>
+            <div class="preguntas"><input class="enunciado" type="radio" name="respuestas" id="respuesta-4"><label for="respuesta-4">d. <span id="pregunta-4"></span></label></div>
+            <p class="boton" id="boton" translate="no">Responder</p>
+        </div>
+        <!--Jugador-->
+        <div class="score">
+            <div class="user">
+				<img src="https://static.vecteezy.com/system/resources/previews/001/206/141/non_2x/doctors-png.png" alt="Logo" width="50" height="40"><p><span id="player"></span></span> </p>
+            </div>
+        </div>
+    </section>
+	<section class="inicio" id="final">
+		<!--Background-->
+		<div class="back" id="back-2">
+	
+		</div>
+		<!--Formulario Nombre-->
+		<div class="register" style="flex-direction: column;">
+			<p>Correctas: <span id="correctas"></span></p>
+			
+			<p>Incorrectas:<span id="incorrectas"></span></p>
+		</div>
+	</section>
+	<!--Scripts-->
+    <script src="assets.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
