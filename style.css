@@ -98,7 +98,7 @@ svg {
 
 .card {
     width: 325px;
-    min-height: 325px;
+    min-height: fit-content;
     border: 5px solid #dcd9f8;
     border-radius: 10%;
     box-shadow: 0 0 5px #dcd9f8;
