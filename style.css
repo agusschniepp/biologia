@@ -22,16 +22,39 @@ svg {
 
 .register {
     padding: 5px;
-    width: 300px;
-    height: 100px;
     border: 5px solid rgb(162, 237, 206);
     border-radius: 10px;
     background-color: #fff;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-size: larger;
+}
+.registro {
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.registro p{
+  margin: 0;
+}
+.eleccion-examen {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.test{
+  cursor: pointer;
+}
+
+.examenes-elegir {
+  display: flex;
+  flex-direction: column-reverse;
 }
 .register input {
     height: 20px;
@@ -74,8 +97,8 @@ svg {
 
 
 .card {
-    width: 300px;
-    height: 300px;
+    width: 325px;
+    min-height: 325px;
     border: 5px solid #dcd9f8;
     border-radius: 10%;
     box-shadow: 0 0 5px #dcd9f8;

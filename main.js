@@ -11,6 +11,9 @@ let tarjeta
 let contador = 0;
 let aciertos = 0;
 let erros = 0;
+let seleccion_examen_1 = document.getElementById('examen-1');
+let seleccion_examen_2 = document.getElementById('examen-2');
+let seleccion_examen_3 = document.getElementById('examen-3');
 
 //Boton iniciar juego
 boton_start.addEventListener('click',iniciar)
@@ -21,6 +24,7 @@ boton_start.style.background = '#888';
 boton_start.style.pointerEvents = 'none';
 //Funcion iniciar juego
 function iniciar () {
+    seleccionDeExamen ()
     start.style.display = "none";
     exam.style.display = 'flex';
     jugador = jugador.value; 
@@ -31,7 +35,7 @@ function iniciar () {
 //funcion checkear input
 document.addEventListener('input', check)
 function check () {
-    if (jugador.value == '' ) {
+    if (jugador.value == '' || seleccion_examen_1.checked == false && seleccion_examen_2.checked == false && seleccion_examen_3.checked == false) {
         boton_start.style.background = '#888';
         boton_start.style.pointerEvents = 'none';
         
@@ -123,7 +127,7 @@ function check_answer () {
 function siguiente() {
     boton_responder.addEventListener('click',()=>{
         if (boton_responder.innerHTML == 'Siguiente') {
-            if (contador == 2) {
+            if (contador == 59) {
                 start.style.display = "none";
                 exam.style.display = "none";
                 final.style.display = 'flex'
@@ -132,7 +136,7 @@ function siguiente() {
                 document.getElementById('incorrectas').innerHTML = erros;
             } else {
             console.log(contador)
-            document.getElementById('progress').value += 1,67
+            document.getElementById('progress').value += 1.67;
             colorsito.forEach((pregunta)=>{
                 pregunta.style.background = 'none';
             })
@@ -145,4 +149,14 @@ function siguiente() {
                 check_answer ()  
         }
     }) 
+}
+
+function seleccionDeExamen () {
+    if (seleccion_examen_1.checked == true) {
+        ejercicios = ejercicios[0]
+    } else if (seleccion_examen_2.checked == true) {
+        ejercicios = ejercicios[1]
+    } else if (seleccion_examen_3.checked == true) {
+        ejercicios = ejercicios[2]
+    }
 }
